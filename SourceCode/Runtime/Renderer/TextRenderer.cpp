@@ -90,7 +90,6 @@ FTextRenderer::Render()
         {
            
             const uint8& gLetter = TextString[Index];
-            const char* test = "";
             
             const TCHAR CharCode = FGameCharCodeMap::Get()->GetMappedCharCodes(gLetter);
             if (CharCode)

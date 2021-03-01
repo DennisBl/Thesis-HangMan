@@ -24,7 +24,7 @@ struct FCategoryGameWord
 static const FCategoryGameWord GameWordPerCategory[] =
 {
     FCategoryGameWord(PC_History,   "HRVAS TRVIKOY POLEMOY", " AXILLEAS"),
-    FCategoryGameWord(PC_History,   "DIKTATORAS 20oy AIWNA", "ADOLFOS XITLER"),
+    FCategoryGameWord(PC_History,   "DIASHMOS DIKTATORAS", "ADOLFOS XITLER"),
     FCategoryGameWord(PC_History,   "ARXAIOS ELLINAS HMIUEOS", "HRAKLHS"),
     FCategoryGameWord(PC_History,   "UEOS TOY OLYMPOY", "HFAISTOS"),
     FCategoryGameWord(PC_History,   "POLEMOS ANEJARTHSIAS", "UEODVROS KOLOKOTRVNIS"),
