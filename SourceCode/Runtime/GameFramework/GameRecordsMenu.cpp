@@ -57,7 +57,7 @@ public:
         else if (PlayerName.IsEmpty())
         {
             FString NullHint;
-            NullHint.Append("PLHKTROLOGISE ONOMA MEGALYTERO APO ");
+            NullHint.Append("PLHKTROLOGHSE ONOMA MEGALYTERO APO ");
             NullHint.Append(FString(MinNameCharCount));
             NullHint.Append(" XARAKTHRES POY JEKINAEI ME GRAMMA");
 
