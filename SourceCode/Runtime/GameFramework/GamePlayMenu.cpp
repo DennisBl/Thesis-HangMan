@@ -35,7 +35,7 @@ static const FCategoryGameWord GameWordPerCategory[] =
     FCategoryGameWord(PC_History,   "POLEMOS ANEJARTHSIAS", "DHMHTRIOS YCHLANTHS"),
 
     FCategoryGameWord(PC_Music,     "ELLHNAS TRAGOYDISTHS", "SAKHS ROUBAS"),
-    FCategoryGameWord(PC_Music,     "TRAGOYDISTRIA AMERIKHS", "BRITNEY SPEARS"),
+    FCategoryGameWord(PC_Music,     "AMERIKANOS TRAGOYDISTHS", "MALOYMA"),
     FCategoryGameWord(PC_Music,     "MOYSIKO ORGANO", "KIUARA"),
     FCategoryGameWord(PC_Music,     "MOYSIKO ORGANO", "PIANO"),
     FCategoryGameWord(PC_Music,     "ELLHNAS TRAGOYDISTHS", "KVNSTANTINOS PANTELIDHS"),
@@ -229,7 +229,7 @@ public:
             FString NullHint;
             NullHint.Append("PLHKTROLOGISE ONOMA MEGALYTERO APO ");
             NullHint.Append(FString(MinNameCharCount));
-            NullHint.Append(" XARAKTHRES POY JEKINAEI ME GRAMMA.");
+            NullHint.Append(" XARAKTHRES POY JEKINAEI ME GRAMMA");
 
             const int32 X = Position.GetOriginX();
             const int32 Y = Position.GetOriginY();

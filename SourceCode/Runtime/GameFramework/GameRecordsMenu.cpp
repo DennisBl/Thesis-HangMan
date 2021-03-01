@@ -59,7 +59,7 @@ public:
             FString NullHint;
             NullHint.Append("PLHKTROLOGISE ONOMA MEGALYTERO APO ");
             NullHint.Append(FString(MinNameCharCount));
-            NullHint.Append(" XARAKTHRES POY JEKINAEI ME GRAMMA.");
+            NullHint.Append(" XARAKTHRES POY JEKINAEI ME GRAMMA");
 
             //English
             /*FString NullHint
@@ -122,6 +122,8 @@ class FHomeButton : public FCanvasButton
 public:
     virtual void OnRelease() override
     {
+        FRecordsMenu* RecordsMenu = (FRecordsMenu*)OwnerMenu;
+        RecordsMenu->ReInitialize();
         FCanvasMenuState* MenuState = OwnerMenu->GetMenuState();
         MenuState->MenuCategory = MC_MainMenu;
     }
@@ -169,6 +171,16 @@ private:
     }
 };
 
+void
+FRecordsMenu::ReInitialize()
+{
+    PlayerName.Empty();
+    GameRecord.Name.Empty();
+    GameRecord.BenchScore = 0;
+    GameRecord.PeakStreak = 0;
+    bDrawInvalidName = false;
+}
+
 FRecordsMenu::FRecordsMenu()
     : bIsNameValid(false)
     , bDrawInvalidName(false)
@@ -176,9 +188,6 @@ FRecordsMenu::FRecordsMenu()
     const FFontCache *FontCache = FAssetManager::Get()->FindOrCreateFontCache("Fonts/Greek.ttf");
 
     const FTexture2D *TickTexture = FAssetManager::Get()->FindOrCreateTexture2D("Images/Game Hangman/MENU/1 Buttons/OK.png");
-    /*GameRecord.Name = "";
-    GameRecord.PeakStreak = 0;
-    GameRecord.BenchScore = 0;*/
 
     FRecordsNameButton*NameButton = new FRecordsNameButton();
     NameButton->FontCache       = FontCache;
@@ -238,10 +247,10 @@ FRecordsMenu::Render(FCanvasRenderer *InCanvasRenderer)
     InCanvasRenderer->DrawSprite(NameTexture, 0, 50, 250, 75, FColor32::White, CX_Center, CY_Top);
     InCanvasRenderer->DrawSprite(LineTexture, 0, 200, 500, 5, FColor32::White, CX_Center, CY_Top);
 
-    InCanvasRenderer->DrawText(FontCache, 1.2f, "SKOR", 0, 400, FColor32::White, CX_Center, CY_Top);
+    InCanvasRenderer->DrawText(FontCache, 1.2f, "Skor", 0, 400, FColor32::White, CX_Center, CY_Top);
     InCanvasRenderer->DrawSprite(LineTexture, 0, 550, 300, 5, FColor32::White, CX_Center, CY_Top);
 
-    InCanvasRenderer->DrawText(FontCache, 1.2f, "SERI", 0, 625, FColor32::White, CX_Center, CY_Top);
+    InCanvasRenderer->DrawText(FontCache, 1.2f, "Seri", 0, 625, FColor32::White, CX_Center, CY_Top);
     InCanvasRenderer->DrawSprite(LineTexture, 0, 775, 300, 5, FColor32::White, CX_Center, CY_Top);
 
     FString BenchScoreString(GameRecord.BenchScore);
@@ -252,7 +261,7 @@ FRecordsMenu::Render(FCanvasRenderer *InCanvasRenderer)
 
     if (bDrawInvalidName)
     {
-        InCanvasRenderer->DrawText(FontCache, 1, "PAIXTHS DEN BREUHKE.", 0, -50, FColor32::Red, CX_Center, CY_Bottom);
+        InCanvasRenderer->DrawText(FontCache, 1, "PAIXTHS DEN BREUHKE", 0, -50, FColor32::Red, CX_Center, CY_Bottom);
     }
 
 	FCanvasMenu::Render(InCanvasRenderer);

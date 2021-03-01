@@ -23,7 +23,7 @@ public:
 public:
 	FRecordsMenu();
 
-	//virtual void ReInitialize() override;
+	virtual void ReInitialize() override;
 	virtual void Render(FCanvasRenderer *InCanvasRenderer) override;
 };
 
